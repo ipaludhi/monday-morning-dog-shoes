@@ -1,12 +1,15 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 // Monday Morning Punchlines: one joke about Monday mornings.
-// Winner DOG: the dog sabotages Monday — the only creature in the house with
-// a sensible plan. Chosen on the 5-criterion rubric (24/25, 2nd of 14) PLUS a
-// Groq gpt-oss-120b proxy head-to-head that beat rubric-winner GYM in both
-// orders, margin 3: fresher, more surprising twist; GYM leans on the over-used
-// "gym lie" Monday trope. See work/candidates.md and work/crosscheck2.json.
-const ENTRY = "My dog hid my shoes this Monday — the only creature in the house with a sensible plan for the week.";
+// Winner EX (switched from DOG after the decisive proxy re-test):
+// qwen/qwen3.8-27b has EX beating DOG in BOTH orders, margin 3 — the ex who
+// texts "u up?" at 6 a.m. is a fresh, visceral analogy for Monday's trap, and
+// "somehow I always answer" lands the turn; DOG reads as a quirky observation
+// rather than a laugh-out-loud moment. gpt-oss-120b separately had DOG beating
+// rubric-winner GYM in both orders, margin 3. Transitively EX > DOG > GYM.
+// EX is also the shortest candidate (75 chars): best economy (criterion 4)
+// and best tie-break bytes. See work/analysis.md, crosscheck2/4/5.json.
+const ENTRY = "Monday is the ex who texts 'u up?' at 6 a.m. — and somehow I always answer.";
 
 // Gate self-check, mirroring the sealed scorer: 1-200 chars, not whitespace-only.
 // Also assert a single line with no trailing newline: the judge reads the file
